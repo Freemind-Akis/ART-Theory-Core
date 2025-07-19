@@ -1,15 +1,13 @@
 # ART-Theory-Core
 Unified structure and simulations for the Temporal Field Theory (ART), covering rotation curves, CMB structure, lensing, and redshift.
 
-# ART Theory Core
-
-🌀 **Ajallisen Resonanssin Teoria (ART)** – Temporal Resonance Theory – is a cosmological framework that models cosmic phenomena through a dynamic temporal field Φ(r, t) without invoking dark matter or inflation.
+**Ajallisen Resonanssin Teoria (ART)** – Temporal Resonance Theory – is a cosmological framework that models cosmic phenomena through a dynamic temporal field Φ(r, t) without invoking dark matter or inflation.
 
 This repository collects all core modules and simulations of ART into one unified structure, with direct links to component papers and simulations.
 
 ---
 
-## 📚 Overview
+##  Overview
 
 The ART theory proposes that:
 - Galactic rotation curves arise from time-dependent field structures
