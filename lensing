@@ -1,3 +1,30 @@
 Lensing
 Simulations and visualization of angular deflection from ART temporal field gradient. Matches Einstein ring behavior without spacetime curvature.
 🔗 Zenodo: To be published — see upcoming lensing paper.
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Radial distance in kiloparsecs
+r = np.linspace(0.5, 20, 200)
+
+# ART field gradient approximation
+phi_gradient = 25 / r**1.5
+
+# Constants
+alpha = 12.695
+omega_t = 1.0  # Temporal resonance factor at max phase
+angular_shift = alpha * phi_gradient * np.sin(omega_t)
+
+# Plotting
+plt.figure(figsize=(10, 6))
+plt.plot(r, angular_shift, label=r"Predicted $\Delta \theta$ (ART)", linewidth=2)
+plt.title("SDSS J2141-0001 – ART Predicted Angular Shift\nfrom Field Gradient and Temporal Resonance")
+plt.xlabel("Radius [kpc]")
+plt.ylabel("Angular Shift [arcsec]")
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
+
+# Save and show
+plt.savefig("SDSSJ2141_ART_Predicted_Angular_Shift.png")
+plt.show()
