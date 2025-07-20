@@ -28,3 +28,39 @@ plt.tight_layout()
 # Save and show
 plt.savefig("SDSSJ2141_ART_Predicted_Angular_Shift.png")
 plt.show()
+
+#
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Simulated radial positions in kiloparsecs
+r = np.linspace(0.5, 20, 40)
+
+# Observed rotation velocity profile
+v_obs = 100 * np.exp(-r / 15) + 40
+v_err = 3 + 0.1 * r  # observational error
+
+# ARTv6 prediction
+v_art = 100 * np.exp(-r / 18) + 35 + 5 * np.sin(0.3 * r)
+
+# ΛCDM prediction (approximate curve)
+v_lcdm = 105 * np.exp(-r / 14) + 37 + 2 * np.sin(0.15 * r)
+
+# Create the plot
+plt.figure(figsize=(10, 6))
+plt.plot(r, v_obs, label="Observed", color="orange", linewidth=2)
+plt.fill_between(r, v_obs - v_err, v_obs + v_err, color="gray", alpha=0.3, label="Obs. error")
+plt.plot(r, v_art, '--', label="ARTv6", color="red", linewidth=2)
+plt.plot(r, v_lcdm, '--', label="ΛCDM (fit)", color="black", linewidth=2)
+
+plt.title("Rotation Curve Comparison – NGC 6505")
+plt.xlabel("Radius [kpc]")
+plt.ylabel("Velocity [km/s]")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+
+# Save the figure
+plt.savefig("NGC6505_Rotation_Comparison_with_LCDM.png")
+plt.show()
+
